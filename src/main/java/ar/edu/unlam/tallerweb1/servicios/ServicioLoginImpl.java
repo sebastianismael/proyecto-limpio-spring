@@ -1,13 +1,10 @@
 package ar.edu.unlam.tallerweb1.servicios;
 
-import javax.inject.Inject;
-
-import ar.edu.unlam.tallerweb1.repositorios.RepositorioUsuarioImpl;
+import ar.edu.unlam.tallerweb1.repositorios.RepositorioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import ar.edu.unlam.tallerweb1.repositorios.RepositorioUsuario;
 import ar.edu.unlam.tallerweb1.modelo.Usuario;
 
 // Implelemtacion del Servicio de usuarios, la anotacion @Service indica a Spring que esta clase es un componente que debe
@@ -20,16 +17,16 @@ import ar.edu.unlam.tallerweb1.modelo.Usuario;
 @Transactional
 public class ServicioLoginImpl implements ServicioLogin {
 
-	private RepositorioUsuario servicioLoginDao;
+	private RepositorioUsuario repositorioUsuario;
 
 	@Autowired
-	public ServicioLoginImpl(RepositorioUsuario servicioLoginDao){
-		this.servicioLoginDao = servicioLoginDao;
+	public ServicioLoginImpl(RepositorioUsuario repositorioUsuario){
+		this.repositorioUsuario = repositorioUsuario;
 	}
 
 	@Override
 	public Usuario consultarUsuario (Usuario usuario) {
-		return servicioLoginDao.consultarUsuario(usuario);
+		return repositorioUsuario.consultarUsuario(usuario);
 	}
 
 }

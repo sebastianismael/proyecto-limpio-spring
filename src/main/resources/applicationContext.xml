@@ -26,7 +26,6 @@
 	<context:component-scan base-package="ar.edu.unlam.tallerweb1.controladores" />
 	<context:component-scan base-package="ar.edu.unlam.tallerweb1.repositorios" />
 	<context:component-scan base-package="ar.edu.unlam.tallerweb1.servicios" />
-	
 
 </beans>
 

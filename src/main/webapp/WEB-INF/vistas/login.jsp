@@ -32,6 +32,7 @@
 		        </c:if>
 				${msg}
 			</div>
+
 		</div>
 		
 		<!-- Placed at the end of the document so the pages load faster -->

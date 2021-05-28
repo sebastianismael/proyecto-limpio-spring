@@ -47,18 +47,14 @@ public class ControladorLogin {
 	@RequestMapping(path = "/validar-login", method = RequestMethod.POST)
 	public ModelAndView validarLogin(@ModelAttribute("usuario") Usuario usuario, HttpServletRequest request) {
 		ModelMap model = new ModelMap();
-
-		// invoca el metodo consultarUsuario del servicio y hace un redirect a la URL /home, esto es, en lugar de enviar a una vista
-		// hace una llamada a otro action a través de la URL correspondiente a ésta
 		Usuario usuarioBuscado = servicioLogin.consultarUsuario(usuario);
 		if (usuarioBuscado != null) {
 			request.getSession().setAttribute("ROL", usuarioBuscado.getRol());
 			return new ModelAndView("redirect:/home");
 		} else {
-			// si el usuario no existe agrega un mensaje de error en el modelo.
 			model.put("error", "Usuario o clave incorrecta");
+			return new ModelAndView("login", model);
 		}
-		return new ModelAndView("login", model);
 	}
 
 	// Escucha la URL /home por GET, y redirige a una vista.

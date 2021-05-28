@@ -28,8 +28,8 @@
 				<!--Hay que cambiarlo si se cambia de motor de base de datos-->
 				<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
 				<!--Cambiar a true si se quiere ver por consola el codigo sql generado por hibernate-->
-				<prop key="hibernate.show_sql">true</prop>
-				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format_sql">false</prop>
 				<!--Para indicar si hibernate genera el modelo de datos al startup-->
 				<!--create: lo crea siempre-->
 				<!--update: aplica cambios realizados-->
